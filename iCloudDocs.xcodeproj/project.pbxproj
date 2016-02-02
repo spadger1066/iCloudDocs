@@ -14,6 +14,7 @@
 		DCCAEE5F1C5FE19400F2AB8C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DCCAEE5D1C5FE19400F2AB8C /* LaunchScreen.storyboard */; };
 		DCCAEE6A1C5FE19400F2AB8C /* iCloudDocsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCCAEE691C5FE19400F2AB8C /* iCloudDocsTests.swift */; };
 		DCCAEE751C5FE19400F2AB8C /* iCloudDocsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCCAEE741C5FE19400F2AB8C /* iCloudDocsUITests.swift */; };
+		DCCAEE841C607FB900F2AB8C /* CloudDoc.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCCAEE831C607FB900F2AB8C /* CloudDoc.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +48,8 @@
 		DCCAEE701C5FE19400F2AB8C /* iCloudDocsUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = iCloudDocsUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		DCCAEE741C5FE19400F2AB8C /* iCloudDocsUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iCloudDocsUITests.swift; sourceTree = "<group>"; };
 		DCCAEE761C5FE19400F2AB8C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DCCAEE821C5FE1C200F2AB8C /* iCloudDocs.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = iCloudDocs.entitlements; sourceTree = "<group>"; };
+		DCCAEE831C607FB900F2AB8C /* CloudDoc.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CloudDoc.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,9 +100,11 @@
 		DCCAEE531C5FE19400F2AB8C /* iCloudDocs */ = {
 			isa = PBXGroup;
 			children = (
+				DCCAEE821C5FE1C200F2AB8C /* iCloudDocs.entitlements */,
 				DCCAEE541C5FE19400F2AB8C /* AppDelegate.swift */,
 				DCCAEE561C5FE19400F2AB8C /* ViewController.swift */,
 				DCCAEE581C5FE19400F2AB8C /* Main.storyboard */,
+				DCCAEE831C607FB900F2AB8C /* CloudDoc.swift */,
 				DCCAEE5B1C5FE19400F2AB8C /* Assets.xcassets */,
 				DCCAEE5D1C5FE19400F2AB8C /* LaunchScreen.storyboard */,
 				DCCAEE601C5FE19400F2AB8C /* Info.plist */,
@@ -193,6 +198,12 @@
 				TargetAttributes = {
 					DCCAEE501C5FE19400F2AB8C = {
 						CreatedOnToolsVersion = 7.2;
+						DevelopmentTeam = W2L76H8G3Y;
+						SystemCapabilities = {
+							com.apple.iCloud = {
+								enabled = 1;
+							};
+						};
 					};
 					DCCAEE641C5FE19400F2AB8C = {
 						CreatedOnToolsVersion = 7.2;
@@ -258,6 +269,7 @@
 			files = (
 				DCCAEE571C5FE19400F2AB8C /* ViewController.swift in Sources */,
 				DCCAEE551C5FE19400F2AB8C /* AppDelegate.swift in Sources */,
+				DCCAEE841C607FB900F2AB8C /* CloudDoc.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -397,10 +409,14 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = iCloudDocs/iCloudDocs.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = iCloudDocs/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.technology.luminator.iCloudDocs;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Debug;
 		};
@@ -408,10 +424,14 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = iCloudDocs/iCloudDocs.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = iCloudDocs/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.technology.luminator.iCloudDocs;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Release;
 		};
